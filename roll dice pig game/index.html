@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dice Pig Game</title>
+
+    <link
+      href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="./CSS-vendor/base-setup.css" />
+    <link rel="stylesheet" href="./CSS-vendor/utilities.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <button class="show-rule">Show Rule</button>
+    <div class="rule">
+      <h2 class="text-center">GAME RULES:</h2>
+      <p>- The game has 2 players, playing in rounds</p>
+      <p>
+        - In each turn, a player rolls a dice as many times as he whishes. Each
+        result get added to his ROUND score
+      </p>
+      <p>
+        - BUT, if the player rolls a 1, all his ROUND score gets lost. After
+        that, it's the next player's turn
+      </p>
+      <p>
+        - The first player to reach 100 points on GLOBAL score wins the game
+      </p>
+
+      <button class="hide-rule">Hide Rule</button>
+    </div>
+
+    <div class="container">
+      <div class="player active">
+        <h2 class="player-name">player 1</h2>
+        <p class="total-score">0</p>
+        <div class="current">
+          <p class="current__text">current</p>
+          <p class="current__score 1">0</p>
+        </div>
+      </div>
+
+      <div class="player">
+        <h2 class="player-name">player 2</h2>
+        <p class="total-score">0</p>
+        <div class="current">
+          <p class="current__text">current</p>
+          <p class="current__score 2">0</p>
+        </div>
+      </div>
+
+      <div class="controller">
+        <div class="controller-content">
+          <button class="btn new-game">
+            <i class="ion-ios-plus-outline"></i>
+            <span>new game</span>
+          </button>
+
+          <div class="dices">
+            <img class="dice1" src="./imgs/dice-6.png" alt="" />
+            <img class="dice2" src="./imgs/dice-6.png" alt="" />
+          </div>
+
+          <div class="roll-hold-dice">
+            <button class="btn roll-dice">
+              <i class="ion-ios-loop"></i>
+              <span>roll dice</span>
+            </button>
+
+            <button class="btn hold-score">
+              <i class="ion-ios-download-outline"></i>
+              <span>hold</span>
+            </button>
+
+            <!-- <p class="final-score">final score</p> -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="./JS-vendor/utils.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>

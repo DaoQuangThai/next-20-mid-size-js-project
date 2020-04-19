@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400&display=swap');
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url('./imgs/back.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  transition: transform 0.3s;
+}
+
+.show-rule {
+  position: absolute;
+  top: 5rem;
+  left: 5rem;
+  display: inline-block;
+  padding: 1rem 2rem;
+  font-size: 1.4rem;
+  background-color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.show-rule:active {
+  transform: translateY(2px);
+}
+
+.show-rule:focus {
+  outline: none;
+}
+
+.rule {
+  margin-top: 3rem;
+  padding: 2rem;
+  position: absolute;
+  width: 300px;
+  background-color: #fff;
+  border-radius: 1rem;
+  transform: translateX(-100%);
+  transition: transform 0.3s linear;
+  font-size: 1.4rem;
+}
+
+.rule.show {
+  transform: translateX(0);
+}
+
+.rule > * {
+  margin-bottom: 3rem;
+}
+
+.hide-rule {
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  display: inline-block;
+  font-size: 1.4rem;
+  border-radius: 5px;
+  background-color: #ccc;
+  outline: none;
+  border: none;
+}
+
+.container {
+  width: 100rem;
+  background-color: #fff;
+  margin: auto;
+  position: relative;
+  display: flex;
+  border-radius: 10px;
+}
+.player {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 10rem 15rem;
+}
+.player.active {
+  background-color: #f7f7f7;
+  border-radius: 10px;
+}
+.player.active .player-name:after {
+  opacity: 1;
+  visibility: visible;
+}
+
+.player-name {
+  font-size: 3.5rem;
+  font-weight: 200;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+}
+
+.player-name:after {
+  content: '';
+  height: 1.5rem;
+  width: 1.5rem;
+  background-color: #eb4d4d;
+  position: absolute;
+  border-radius: 50%;
+  top: 50%;
+  transform: translate(200%, -50%);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.total-score {
+  font-size: 9rem;
+  color: #eb4d4d;
+  margin-bottom: 13rem;
+  font-weight: 200;
+}
+.current {
+  background-color: #eb4d4d;
+  padding: 1rem 3rem;
+  letter-spacing: 0.5px;
+}
+.current__text {
+  color: #333;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+.current__score {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: 200;
+}
+
+.controller {
+  height: 100%;
+  width: 20rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.controller-content {
+  padding: 4rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.btn {
+  display: flex;
+  background-color: transparent;
+  border: none;
+  font-size: 1.8rem;
+  text-transform: uppercase;
+  font-weight: 200;
+  color: #777;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.5px;
+  transition: all 0.25s;
+}
+
+.btn:hover {
+  color: #333;
+  font-weight: 400;
+}
+
+.btn:hover i {
+  margin-right: 2rem;
+}
+
+.btn i {
+  margin-right: 12px;
+  font-size: 3rem;
+  color: #eb4d4d;
+  transition: margin 0.25s;
+}
+
+.dices img {
+  perspective: 1000px;
+  width: 10rem;
+  height: 10rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.dices img:first-child {
+  margin-bottom: 3rem;
+}
+
+.roll-hold-dice {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.roll-hold-dice > *:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.final-score {
+  color: #777;
+  font-size: 1.8rem;
+  padding: 0.5rem 2rem;
+  border: 1px solid #aaa;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 200;
+}
+
+.dice1.rolling {
+  animation: rotate 1.2s ease infinite;
+}
+
+.dice2.rolling {
+  animation: rotate-reverse 1s linear infinite;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  50% {
+    transform: rotate(130deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-reverse {
+  0% {
+    transform: rotate(360deg);
+  }
+
+  50% {
+    transform: rotate(-110deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
